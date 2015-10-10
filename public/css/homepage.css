@@ -1,0 +1,29 @@
+body{
+
+	background-image: url('../images/background.jpg') ;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#carousel-example-generic{
+
+	margin-top: -0.8%;
+}
+
+.ui.large.inverted.menu{
+
+	font-size: 15px;
+}
+
+#searchInput{
+
+	width : 200%;
+}
+
+#error{
+	color: red;
+	font-weight: bold;
+	font-size: 15px;
+}
