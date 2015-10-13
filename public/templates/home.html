@@ -1,0 +1,160 @@
+<div class="ui red large inverted menu">
+    <div class="ui container">
+      <a class="item">
+        <i class="home icon"></i>
+         Home
+      </a>
+      <a class="item">
+        <i class="shipping icon"></i>
+        Services
+      </a>
+      <a class="item">
+        <i class="info icon"></i>
+        About Us
+      </a>
+      <a class="item">
+        <i class="phone icon"></i>
+        Contact Us
+      </a>
+      <div class="right menu">
+          <a class="item" ng-click="logout()">
+            <i class="sign out icon"></i>
+              Logout
+            </a>
+          <div id="rightMenuItems">
+            <img class="ui avatar image" ng-src="{{userProfile.picture}}">
+            <span ng-bind="userProfile.name"></span>
+          </div>
+        </a>  
+      </div>
+    </div>
+  </div>
+
+	<div class="container">
+
+	<!--	<form name="searchForm" novalidate ng-show="showSearch">
+        	<div class="form-group" ng-show="showPickUp">
+        		<label for="pickUpLocation">Pick up Location</label>
+            	<div class="input-group">
+            		<input id="pickUpLocation" type="text" class="form-control" ng-model="searchPickUp" placeholder="Centurion Mall, Centurion" googleplace required autofocus />
+            		<span class="input-group-btn">
+                		<button class="btn btn-primary" ng-disabled="searchForm.$invalid" ng-click ="searchForPickUp()">Search</button>
+            		</span>
+            	</div>
+        	</div>
+        	<div class="form-group" ng-show="showDestination">
+        		<label for="deliveryLocation">Delivery Location</label>
+            	<div class="input-group">
+            		<input id="deliveryLocation" placeholder="Noordwyk, Midrand" type="text" class="form-control" ng-model="searchDestination" placeholder="Centurion Mall, Centurion"  googleplace required autofocus />
+            		<span class="input-group-btn">
+                		<button class="btn btn-primary" ng-disabled="searchForm.$invalid" ng-click ="searchForDestination()">Search</button>
+            		</span>
+            	</div>
+        	</div>
+    	</form> -->
+
+      <form name="searchForm" novalidate>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="ui large right action left icon input">
+              <input type="text" placeholder="Add pick up location" id="searchInput" ng-model="searchPickUp" googleplace required autofocus>
+              <i class="users icon"></i>
+              <button class="ui yellow right labeled icon button" ng-click ="searchForPickUp()">
+                <i class="marker icon"></i>
+                Add
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ui large right action left icon input">
+              <input type="text" placeholder="Add destination location"  id="searchInput" ng-model="searchDestination" googleplace required autofocus>
+              <i class="users icon"></i>
+              <button class="ui green right labeled icon button" ng-click ="searchForDestination()">
+                <i class="marker icon"></i>
+                Add
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <button class="ui massive teal active button" ng-click ="getDistance()" ng-show="showQuote">
+                <i class="calculator icon"></i>
+                Quote
+              </button>
+              <button class="ui massive violet active button" ng-click ="changeLocation()">
+                <i class="location arrow icon"></i>
+                Change Location
+              </button>
+            </div>
+          </div>
+        </div>            
+      </form>
+
+      
+
+        <div id="map"></div>
+    </div>
+
+    <div class="container">
+    	<form name="searchForm" novalidate>
+  			
+    	</form>
+    </div>
+
+    <div class="modal fade" id="error">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Error <i class="frown icon"></i></h4>
+        </div>
+        <div class="modal-body">
+          <p>{{error}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="ui massive red button" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+  <div class="modal fade" id="quote-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Quote</h4>
+        </div>
+        <div class="modal-body">
+          <form class="ui form">
+            <h4 class="ui dividing header" id="modalHeaders">Location Details</h4>
+            <div class="two fields">
+              <div class="field">
+                <label id="modalLabel">Pick up location</label>
+                <input type="text" ng-model="searchPickUp">
+              </div>
+              <div class="field" id="modalLabel">
+                <label>Destination location</label>
+                <input type="text" ng-model="searchDestination">
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label id="modalLabel">Distance</label>
+                <input type="text" ng-model="totalDistance">
+              </div>
+              <div class="field">
+                <label id="modalLabel">Time</label>
+                <input type="text" ng-model="time">
+              </div>
+            </div>
+            <h4 class="ui dividing header" id="modalHeaders">Items</h4>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="ui massive red button" data-dismiss="modal" ng-click="changeLocation()">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>

@@ -1,0 +1,87 @@
+ <div class="ui red large inverted menu">
+    <div class="ui container">
+      <a class="item">
+        <i class="home icon"></i>
+         Home
+      </a>
+      <a class="item">
+        <i class="shipping icon"></i>
+        Services
+      </a>
+      <a class="item">
+        <i class="info icon"></i>
+        About Us
+      </a>
+      <a class="item">
+        <i class="phone icon"></i>
+        Contact Us
+      </a>
+      <div class="right menu">
+        <a class="item" ng-click="login()">
+          <i class="sign in icon"></i>
+          Login
+        </a>  
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          <p>In order to login, please use your gmail account or your facebook account</p>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <a ng-click="login()" class="btn btn-primary btn-lg btn-block">SignIn</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="ui massive red button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  	<div class="ui container">
+  		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  			<ol class="carousel-indicators">
+    			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  			</ol>
+
+
+  			<div class="carousel-inner" role="listbox">
+    			<div class="item active">
+      				<img src="images/salon_location.jpg" alt="...">
+      				<div class="carousel-caption">
+        				Any place
+      				</div>
+    			</div>
+    			<div class="item">
+      				<img src="images/071712-LOCATION-APPS-006edit.jpg" alt="...">
+      				<div class="carousel-caption">
+        				Super convinient
+      				</div>
+    			</div>
+    			<div class="item">
+      				<img src="images/compass.jpg" alt="...">
+      				<div class="carousel-caption">
+        				In any direction
+      				</div>
+    			</div>
+  			</div>
+		</div>
+  	</div>
+
+    <div class="ui container">
+      <h2 class="ui center red aligned icon header" id="NameLogo">
+        <i class="circular theme icon"></i>
+          Welcome to fugazzi
+      </h2>
+    </div>
+</div>
