@@ -7,6 +7,13 @@ body{
     background-size: cover;
 }
 
+#rightMenuItems{
+
+	color: white;
+	font-weight: bold;
+	margin-top: 7px;
+}
+
 #carousel-example-generic{
 
 	margin-top: -0.8%;
@@ -17,9 +24,14 @@ body{
 	font-size: 15px;
 }
 
-#searchInput{
+#modalHeaders{
 
-	width : 200%;
+	color: white;
+	font-weight: bold;
+}
+
+#modalLabel{
+	color: white;
 }
 
 #error{
